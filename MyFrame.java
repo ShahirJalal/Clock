@@ -12,10 +12,13 @@ public class MyFrame extends JFrame {
     Calendar calendar;
     SimpleDateFormat timeFormat;
     SimpleDateFormat dayFormat;
+    SimpleDateFormat dateFormat;
     JLabel timeLabel;
     JLabel dayLabel;
+    JLabel dateLabel;
     String time;
     String day;
+    String date;
 
     MyFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,15 +29,19 @@ public class MyFrame extends JFrame {
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
         dayFormat = new SimpleDateFormat("EEEE");
+        dateFormat = new SimpleDateFormat("dd.MM.yyy");
 
         timeLabel = new JLabel();
         timeLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
-        timeLabel.setForeground(new Color(0x00FF00));
-        timeLabel.setForeground(Color.black);
+        timeLabel.setForeground(Color.green);
+        timeLabel.setBackground(Color.black);
         timeLabel.setOpaque(true);
 
         dayLabel = new JLabel();
         dayLabel.setFont(new Font("Ink Free", Font.PLAIN, 35));
+
+        dateLabel = new JLabel();
+        dateLabel.setFont(new Font("Ink Free", Font.PLAIN, 25));
 
         this.add(timeLabel);
         this.add(dayLabel);
