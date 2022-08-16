@@ -1,4 +1,6 @@
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -9,8 +11,11 @@ public class MyFrame extends JFrame {
 
     Calendar calendar;
     SimpleDateFormat timeFormat;
+    SimpleDateFormat dayFormat;
     JLabel timeLabel;
+    JLabel dayLabel;
     String time;
+    String day;
 
     MyFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,10 +25,13 @@ public class MyFrame extends JFrame {
         this.setResizable(false);
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
+        dayFormat = new SimpleDateFormat("E");
 
         timeLabel = new JLabel();
-        timeLabel.setFont(font);
-
+        timeLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
+        timeLabel.setForeground(new Color(0x00FF00));
+        timeLabel.setForeground(Color.black);
+        timeLabel.setOpaque(true);
 
         this.add(timeLabel);
         this.setVisible(true);
