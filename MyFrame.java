@@ -9,7 +9,7 @@ public class MyFrame extends JFrame {
 
     Calendar calendar;
     SimpleDateFormat timeFormat;
-    JLabel timLabel;
+    JLabel timeLabel;
     String time;
 
     MyFrame() {
@@ -21,16 +21,30 @@ public class MyFrame extends JFrame {
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
 
-        timLabel = new JLabel();
+        timeLabel = new JLabel();
+        timeLabel.setFont(font);
 
-        time = timeFormat.format(Calendar.getInstance().getTime());
-        timLabel.setText(time);
 
-        this.add(timLabel);
+        this.add(timeLabel);
         this.setVisible(true);
 
         setTime();
 
+    }
+
+    public void setTime() {
+
+        while(true) {
+        time = timeFormat.format(Calendar.getInstance().getTime());
+        timeLabel.setText(time);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        }
     }
     
 }
