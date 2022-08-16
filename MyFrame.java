@@ -29,11 +29,11 @@ public class MyFrame extends JFrame {
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
         dayFormat = new SimpleDateFormat("EEEE");
-        dateFormat = new SimpleDateFormat("dd.MM.yyy");
+        dateFormat = new SimpleDateFormat("dd MMMMM yyy");
 
         timeLabel = new JLabel();
         timeLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
-        timeLabel.setForeground(Color.green);
+        timeLabel.setForeground(Color.red);
         timeLabel.setBackground(Color.black);
         timeLabel.setOpaque(true);
 
