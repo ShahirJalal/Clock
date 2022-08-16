@@ -45,6 +45,7 @@ public class MyFrame extends JFrame {
 
         this.add(timeLabel);
         this.add(dayLabel);
+        this.add(dateLabel);
         this.setVisible(true);
 
         setTime();
@@ -59,6 +60,9 @@ public class MyFrame extends JFrame {
 
         day = dayFormat.format(Calendar.getInstance().getTime());
         dayLabel.setText(day);
+
+        date = dateFormat.format(Calendar.getInstance().getTime());
+        dateLabel.setText(date);
 
         try {
             Thread.sleep(1000);
